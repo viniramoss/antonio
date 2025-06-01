@@ -249,10 +249,68 @@ Total: 10 maçãs coletadas!</div>
                 </div>
                 
                 <div class="exercise-card">
+                    <div class="difficulty-badge easy">FÁCIL</div>
+                    <h3>⭐ Exercício 3: Contador de Estrelas</h3>
+                    <p><strong>Contexto:</strong> Você está fazendo um desenho em ASCII e precisa criar linhas de estrelas.</p>
+                    <p><strong>Problema:</strong> Imprima 7 linhas, onde cada linha tem um número crescente de estrelas (linha 1 = 1 estrela, linha 2 = 2 estrelas, etc.).</p>
+                    <p><strong>Exemplo de saída:</strong></p>
+                    <div class="output-block">*
+**
+***
+****
+*****
+******
+*******</div>
+                </div>
+                
+                <div class="exercise-card">
+                    <div class="difficulty-badge easy">FÁCIL</div>
+                    <h3>🎯 Exercício 4: Tabuada Simples</h3>
+                    <p><strong>Contexto:</strong> Você está ajudando uma criança a estudar matemática.</p>
+                    <p><strong>Problema:</strong> Crie a tabuada do 5, mostrando as multiplicações de 5 × 1 até 5 × 10.</p>
+                    <p><strong>Exemplo de saída:</strong></p>
+                    <div class="output-block">5 × 1 = 5
+5 × 2 = 10
+5 × 3 = 15
+...
+5 × 10 = 50</div>
+                </div>
+                
+                <div class="exercise-card">
+                    <div class="difficulty-badge easy">FÁCIL</div>
+                    <h3>🏃 Exercício 5: Contador Regressivo</h3>
+                    <p><strong>Contexto:</strong> Você está criando um timer para uma corrida.</p>
+                    <p><strong>Problema:</strong> Faça uma contagem regressiva de 10 até 1, e no final mostre "LARGADA!".</p>
+                    <p><strong>Exemplo de saída:</strong></p>
+                    <div class="output-block">10
+9
+8
+7
+6
+5
+4
+3
+2
+1
+LARGADA!</div>
+                </div>
+                
+                <!-- NÍVEL MÉDIO -->
+                <h3>🟡 Nível Médio - Aplicando Conceitos</h3>
+                
+                <div class="exercise-card">
                     <div class="difficulty-badge medium">MÉDIO</div>
-                    <h3>💰 Exercício 3: Simulador de Poupança</h3>
+                    <h3>💰 Exercício 6: Simulador de Poupança</h3>
                     <p><strong>Contexto:</strong> Você quer saber quando sua poupança vai atingir uma meta.</p>
-                    <p><strong>Problema:</strong> Comece com R$ 1000,00. A cada mês, adicione R$ 150,00 e ganhe 0,5% de juros sobre o total.</p>
+                    <p><strong>Problema:</strong> Comece com R$ 1000,00. A cada mês, adicione R$ 150,00 e ganhe 0,5% de juros sobre o total. Calcule em quantos meses você chegará a R$ 3000,00.</p>
+                    <p><strong>Fórmula:</strong> novo_valor = (valor_atual + deposito) * 1.005</p>
+                </div>
+                
+                <div class="exercise-card">
+                    <div class="difficulty-badge medium">MÉDIO</div>
+                    <h3>🎲 Exercício 7: Jogo de Par ou Ímpar</h3>
+                    <p><strong>Contexto:</strong> Criar um jogo simples de par ou ímpar com o computador.</p>
+                    <p><strong>Problema:</strong> O usuário escolhe par ou ímpar, digita um número, o computador gera um número aleatório. Continue até o usuário decidir parar.</p>
                 </div>
             </div>
         `;
@@ -289,6 +347,205 @@ Total: 10 maçãs coletadas!</div>
                             <li><strong>Incremento:</strong> contador += 1 evita loop infinito</li>
                             <li><strong>Total:</strong> contador-1 porque após o último loop, contador vira 11</li>
                         </ol>
+                    </div>
+                </div>
+
+                <div class="exercise-card">
+                    <h3>🔢 Solução 2: Soma dos Primeiros N Números</h3>
+                    
+                    <div class="code-block">
+<span class="comment"># Soma dos Primeiros N Números - Solução</span>
+
+<span class="function">n</span> <span class="operator">=</span> <span class="number">5</span>  <span class="comment"># Número até onde somar (você pode mudar)</span>
+<span class="function">soma</span> <span class="operator">=</span> <span class="number">0</span>  <span class="comment"># Acumulador da soma</span>
+<span class="function">atual</span> <span class="operator">=</span> <span class="number">1</span>  <span class="comment"># Número atual sendo somado</span>
+
+<span class="keyword">while</span> <span class="function">atual</span> <span class="operator">&lt;=</span> <span class="function">n</span><span class="operator">:</span>  <span class="comment"># Enquanto não chegou ao limite</span>
+    <span class="function">soma</span> <span class="operator">+=</span> <span class="function">atual</span>  <span class="comment"># Adiciona o número atual à soma</span>
+    <span class="builtin">print</span><span class="operator">(</span><span class="string">f"Somando {atual}, total agora: {soma}"</span><span class="operator">)</span>  <span class="comment"># Debug</span>
+    <span class="function">atual</span> <span class="operator">+=</span> <span class="number">1</span>  <span class="comment"># Próximo número</span>
+
+<span class="builtin">print</span><span class="operator">(</span><span class="string">f"Resultado final: {soma}"</span><span class="operator">)</span>
+                    </div>
+                    
+                    <div class="concept-box">
+                        <h4>🧠 Conceito: Acumulador</h4>
+                        <p>A variável <strong>soma</strong> é um <em>acumulador</em> - ela guarda o resultado parcial e vai crescendo a cada iteração.</p>
+                        <p><strong>Padrão importante:</strong> acumulador += valor</p>
+                    </div>
+                </div>
+
+                <div class="exercise-card">
+                    <h3>⭐ Solução 3: Contador de Estrelas</h3>
+                    
+                    <div class="code-block">
+<span class="comment"># Contador de Estrelas - Solução</span>
+
+<span class="function">linha</span> <span class="operator">=</span> <span class="number">1</span>  <span class="comment"># Começamos na primeira linha</span>
+
+<span class="keyword">while</span> <span class="function">linha</span> <span class="operator">&lt;=</span> <span class="number">7</span><span class="operator">:</span>  <span class="comment"># 7 linhas total</span>
+    <span class="function">estrelas</span> <span class="operator">=</span> <span class="string">"*"</span> <span class="operator">*</span> <span class="function">linha</span>  <span class="comment"># Cria string com N estrelas</span>
+    <span class="builtin">print</span><span class="operator">(</span><span class="function">estrelas</span><span class="operator">)</span>  <span class="comment"># Imprime a linha</span>
+    <span class="function">linha</span> <span class="operator">+=</span> <span class="number">1</span>  <span class="comment"># Próxima linha</span>
+                    </div>
+                    
+                    <div class="tip-box">
+                        <h4>🔥 Dica Pro:</h4>
+                        <p><strong>"*" * linha</strong> é um truque do Python que repete a string "*" um número específico de vezes!</p>
+                        <ul>
+                            <li>"*" * 1 = "*"</li>
+                            <li>"*" * 3 = "***"</li>
+                            <li>"*" * 5 = "*****"</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="exercise-card">
+                    <h3>🎯 Solução 4: Tabuada Simples</h3>
+                    
+                    <div class="code-block">
+<span class="comment"># Tabuada do 5 - Solução</span>
+
+<span class="function">multiplicador</span> <span class="operator">=</span> <span class="number">1</span>  <span class="comment"># Começamos multiplicando por 1</span>
+
+<span class="keyword">while</span> <span class="function">multiplicador</span> <span class="operator">&lt;=</span> <span class="number">10</span><span class="operator">:</span>  <span class="comment"># Vai até 10</span>
+    <span class="function">resultado</span> <span class="operator">=</span> <span class="number">5</span> <span class="operator">*</span> <span class="function">multiplicador</span>  <span class="comment"># Calcula 5 × multiplicador</span>
+    <span class="builtin">print</span><span class="operator">(</span><span class="string">f"5 × {multiplicador} = {resultado}"</span><span class="operator">)</span>  <span class="comment"># Mostra a conta</span>
+    <span class="function">multiplicador</span> <span class="operator">+=</span> <span class="number">1</span>  <span class="comment"># Próximo número</span>
+                    </div>
+                    
+                    <div class="concept-box">
+                        <h4>💡 Conceito: f-strings</h4>
+                        <p>O <strong>f"texto {variavel}"</strong> é uma forma moderna e limpa de inserir variáveis dentro de strings em Python. Muito mais legível que concatenação!</p>
+                    </div>
+                </div>
+
+                <div class="exercise-card">
+                    <h3>🏃 Solução 5: Contador Regressivo</h3>
+                    
+                    <div class="code-block">
+<span class="comment"># Contador Regressivo - Solução</span>
+
+<span class="function">tempo</span> <span class="operator">=</span> <span class="number">10</span>  <span class="comment"># Começamos em 10</span>
+
+<span class="keyword">while</span> <span class="function">tempo</span> <span class="operator">&gt;=</span> <span class="number">1</span><span class="operator">:</span>  <span class="comment"># Enquanto maior ou igual a 1</span>
+    <span class="builtin">print</span><span class="operator">(</span><span class="function">tempo</span><span class="operator">)</span>  <span class="comment"># Mostra o número</span>
+    <span class="function">tempo</span> <span class="operator">-=</span> <span class="number">1</span>  <span class="comment"># DECREMENTA (diminui 1)</span>
+
+<span class="builtin">print</span><span class="operator">(</span><span class="string">"LARGADA!"</span><span class="operator">)</span>  <span class="comment"># Mensagem final</span>
+                    </div>
+                    
+                    <div class="warning-box">
+                        <h4>⚠️ Atenção: Decremento!</h4>
+                        <p>Aqui usamos <strong>tempo -= 1</strong> em vez de <strong>tempo += 1</strong>!</p>
+                        <p>Isso diminui o valor, fazendo a contagem ser regressiva.</p>
+                        <p><strong>Condição:</strong> while tempo >= 1 (não tempo <= 1!)</p>
+                    </div>
+                </div>
+
+                <!-- SOLUÇÕES NÍVEL MÉDIO -->
+                <h3>🟡 Soluções Nível Médio</h3>
+                
+                <div class="exercise-card">
+                    <h3>💰 Solução 6: Simulador de Poupança</h3>
+                    
+                    <div class="code-block">
+<span class="comment"># Simulador de Poupança - Solução</span>
+
+<span class="function">saldo</span> <span class="operator">=</span> <span class="number">1000.00</span>  <span class="comment"># Valor inicial</span>
+<span class="function">deposito_mensal</span> <span class="operator">=</span> <span class="number">150.00</span>  <span class="comment"># Valor depositado por mês</span>
+<span class="function">taxa_juros</span> <span class="operator">=</span> <span class="number">1.005</span>  <span class="comment"># 0,5% = 1.005</span>
+<span class="function">meta</span> <span class="operator">=</span> <span class="number">3000.00</span>  <span class="comment"># Objetivo</span>
+<span class="function">mes</span> <span class="operator">=</span> <span class="number">0</span>  <span class="comment"># Contador de meses</span>
+
+<span class="builtin">print</span><span class="operator">(</span><span class="string">f"💰 Meta: R$ {meta:.2f}"</span><span class="operator">)</span>
+<span class="builtin">print</span><span class="operator">(</span><span class="string">f"💵 Saldo inicial: R$ {saldo:.2f}"</span><span class="operator">)</span>
+<span class="builtin">print</span><span class="operator">(</span><span class="string">"" + "="*40</span><span class="operator">)</span>
+
+<span class="keyword">while</span> <span class="function">saldo</span> <span class="operator">&lt;</span> <span class="function">meta</span><span class="operator">:</span>  <span class="comment"># Enquanto não atingir a meta</span>
+    <span class="function">mes</span> <span class="operator">+=</span> <span class="number">1</span>  <span class="comment"># Próximo mês</span>
+    <span class="function">saldo</span> <span class="operator">+=</span> <span class="function">deposito_mensal</span>  <span class="comment"># Adiciona depósito</span>
+    <span class="function">saldo</span> <span class="operator">*=</span> <span class="function">taxa_juros</span>  <span class="comment"># Aplica juros</span>
+    
+    <span class="builtin">print</span><span class="operator">(</span><span class="string">f"Mês {mes:2d}: R$ {saldo:8.2f}"</span><span class="operator">)</span>
+
+<span class="builtin">print</span><span class="operator">(</span><span class="string">"" + "="*40</span><span class="operator">)</span>
+<span class="builtin">print</span><span class="operator">(</span><span class="string">f"🎉 Meta atingida em {mes} meses!"</span><span class="operator">)</span>
+<span class="builtin">print</span><span class="operator">(</span><span class="string">f"💰 Saldo final: R$ {saldo:.2f}"</span><span class="operator">)</span>
+                    </div>
+                    
+                    <div class="concept-box">
+                        <h4>🧮 Conceitos Financeiros</h4>
+                        <p><strong>Juros compostos:</strong> saldo *= 1.005 (multiplica por 1 + taxa)</p>
+                        <p><strong>Formatação:</strong> {valor:.2f} mostra 2 casas decimais</p>
+                        <p><strong>Alinhamento:</strong> {mes:2d} alinha números à direita</p>
+                    </div>
+                </div>
+
+                <div class="exercise-card">
+                    <h3>🎲 Solução 7: Jogo de Par ou Ímpar</h3>
+                    
+                    <div class="code-block">
+<span class="comment"># Jogo de Par ou Ímpar - Solução</span>
+<span class="keyword">import</span> <span class="builtin">random</span>
+
+<span class="function">continuar</span> <span class="operator">=</span> <span class="builtin">True</span>
+<span class="function">vitorias_usuario</span> <span class="operator">=</span> <span class="number">0</span>
+<span class="function">vitorias_computador</span> <span class="operator">=</span> <span class="number">0</span>
+
+<span class="builtin">print</span><span class="operator">(</span><span class="string">"🎲 Bem-vindo ao Jogo de Par ou Ímpar!"</span><span class="operator">)</span>
+
+<span class="keyword">while</span> <span class="function">continuar</span><span class="operator">:</span>
+    <span class="builtin">print</span><span class="operator">(</span><span class="string">"\n" + "="*30</span><span class="operator">)</span>
+    
+    <span class="comment"># Usuário escolhe par ou ímpar</span>
+    <span class="function">escolha_valida</span> <span class="operator">=</span> <span class="builtin">False</span>
+    <span class="keyword">while</span> <span class="keyword">not</span> <span class="function">escolha_valida</span><span class="operator">:</span>
+        <span class="function">escolha</span> <span class="operator">=</span> <span class="builtin">input</span><span class="operator">(</span><span class="string">"Escolha PAR ou ÍMPAR: "</span><span class="operator">)</span><span class="operator">.</span><span class="method">upper</span><span class="operator">()</span><span class="operator">.</span><span class="method">strip</span><span class="operator">()</span>
+        <span class="keyword">if</span> <span class="function">escolha</span> <span class="keyword">in</span> <span class="operator">[</span><span class="string">"PAR"</span><span class="operator">,</span> <span class="string">"IMPAR"</span><span class="operator">,</span> <span class="string">"ÍMPAR"</span><span class="operator">]</span><span class="operator">:</span>
+            <span class="keyword">if</span> <span class="function">escolha</span> <span class="keyword">in</span> <span class="operator">[</span><span class="string">"IMPAR"</span><span class="operator">,</span> <span class="string">"ÍMPAR"</span><span class="operator">]</span><span class="operator">:</span>
+                <span class="function">escolha</span> <span class="operator">=</span> <span class="string">"ÍMPAR"</span>
+            <span class="function">escolha_valida</span> <span class="operator">=</span> <span class="builtin">True</span>
+        <span class="keyword">else</span><span class="operator">:</span>
+            <span class="builtin">print</span><span class="operator">(</span><span class="string">"❌ Digite apenas PAR ou ÍMPAR!"</span><span class="operator">)</span>
+    
+    <span class="comment"># Usuário digita número</span>
+    <span class="function">numero_usuario</span> <span class="operator">=</span> <span class="builtin">int</span><span class="operator">(</span><span class="builtin">input</span><span class="operator">(</span><span class="string">"Digite um número (0-10): "</span><span class="operator">))</span>
+    <span class="function">numero_computador</span> <span class="operator">=</span> <span class="builtin">random</span><span class="operator">.</span><span class="method">randint</span><span class="operator">(</span><span class="number">0</span><span class="operator">,</span> <span class="number">10</span><span class="operator">)</span>
+    <span class="function">soma</span> <span class="operator">=</span> <span class="function">numero_usuario</span> <span class="operator">+</span> <span class="function">numero_computador</span>
+    
+    <span class="comment"># Verifica se soma é par ou ímpar</span>
+    <span class="function">resultado</span> <span class="operator">=</span> <span class="string">"PAR"</span> <span class="keyword">if</span> <span class="function">soma</span> <span class="operator">%</span> <span class="number">2</span> <span class="operator">==</span> <span class="number">0</span> <span class="keyword">else</span> <span class="string">"ÍMPAR"</span>
+    
+    <span class="builtin">print</span><span class="operator">(</span><span class="string">f"Você: {numero_usuario} | Computador: {numero_computador}"</span><span class="operator">)</span>
+    <span class="builtin">print</span><span class="operator">(</span><span class="string">f"Soma: {soma} ({resultado})"</span><span class="operator">)</span>
+    
+    <span class="comment"># Verifica quem ganhou</span>
+    <span class="keyword">if</span> <span class="function">escolha</span> <span class="operator">==</span> <span class="function">resultado</span><span class="operator">:</span>
+        <span class="builtin">print</span><span class="operator">(</span><span class="string">"🎉 Você ganhou!"</span><span class="operator">)</span>
+        <span class="function">vitorias_usuario</span> <span class="operator">+=</span> <span class="number">1</span>
+    <span class="keyword">else</span><span class="operator">:</span>
+        <span class="builtin">print</span><span class="operator">(</span><span class="string">"😔 Computador ganhou!"</span><span class="operator">)</span>
+        <span class="function">vitorias_computador</span> <span class="operator">+=</span> <span class="number">1</span>
+    
+    <span class="comment"># Pergunta se quer continuar</span>
+    <span class="function">resposta</span> <span class="operator">=</span> <span class="builtin">input</span><span class="operator">(</span><span class="string">"\nJogar novamente? (s/n): "</span><span class="operator">)</span><span class="operator">.</span><span class="method">lower</span><span class="operator">()</span><span class="operator">.</span><span class="method">strip</span><span class="operator">()</span>
+    <span class="function">continuar</span> <span class="operator">=</span> <span class="function">resposta</span> <span class="keyword">in</span> <span class="operator">[</span><span class="string">"s"</span><span class="operator">,</span> <span class="string">"sim"</span><span class="operator">,</span> <span class="string">"y"</span><span class="operator">,</span> <span class="string">"yes"</span><span class="operator">]</span>
+
+<span class="builtin">print</span><span class="operator">(</span><span class="string">f"\n🏆 Placar Final:"</span><span class="operator">)</span>
+<span class="builtin">print</span><span class="operator">(</span><span class="string">f"Você: {vitorias_usuario} | Computador: {vitorias_computador}"</span><span class="operator">)</span>
+<span class="builtin">print</span><span class="operator">(</span><span class="string">"Obrigado por jogar! 👋"</span><span class="operator">)</span>
+                    </div>
+                    
+                    <div class="tip-box">
+                        <h4>🎯 Conceitos Avançados Aplicados:</h4>
+                        <ul>
+                            <li><strong>While aninhado:</strong> Loop dentro de loop para validação</li>
+                            <li><strong>Operador módulo (%):</strong> soma % 2 == 0 verifica se é par</li>
+                            <li><strong>Operador ternário:</strong> valor = A if condição else B</li>
+                            <li><strong>Métodos de string:</strong> .upper(), .lower(), .strip()</li>
+                            <li><strong>Controle de fluxo:</strong> Várias condições de saída</li>
+                        </ul>
                     </div>
                 </div>
             </div>
