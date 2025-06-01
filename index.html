@@ -4,10 +4,361 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guia Completo - While Loops em Python</title>
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/components.css">
-    <link rel="stylesheet" href="styles/syntax.css">
-    <link rel="stylesheet" href="styles/responsive.css">
+    <style>
+        /* =========================================
+           RESET E CONFIGURAÇÕES BÁSICAS
+           ========================================= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* =========================================
+           HEADER
+           ========================================= */
+        .header {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            color: #7f8c8d;
+            margin-bottom: 20px;
+        }
+
+        /* =========================================
+           NAVEGAÇÃO
+           ========================================= */
+        .nav-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .tab-btn {
+            padding: 12px 25px;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .tab-btn:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+        }
+
+        .tab-btn.active {
+            background: #e74c3c;
+            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
+        }
+
+        /* =========================================
+           CONTEÚDO DAS ABAS
+           ========================================= */
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* =========================================
+           SEÇÕES
+           ========================================= */
+        .section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        .section h2 {
+            color: #2c3e50;
+            font-size: 2em;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        .section h3 {
+            color: #34495e;
+            font-size: 1.5em;
+            margin: 25px 0 15px 0;
+        }
+
+        .intro-text {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+
+        /* =========================================
+           BLOCOS DE CÓDIGO FORMATADOS
+           ========================================= */
+        .code-block {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 25px;
+            border-radius: 15px;
+            font-family: 'Fira Code', 'Consolas', 'Monaco', monospace;
+            font-size: 14px;
+            line-height: 1.8;
+            overflow-x: auto;
+            margin: 20px 0;
+            border-left: 5px solid #3498db;
+            position: relative;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            white-space: pre;
+        }
+
+        .code-line {
+            display: block;
+            margin: 0;
+            padding: 2px 0;
+        }
+
+        /* Syntax highlighting */
+        .keyword { 
+            color: #569cd6; 
+            font-weight: bold; 
+        }
+
+        .string { 
+            color: #ce9178; 
+        }
+
+        .comment { 
+            color: #6a9955; 
+            font-style: italic; 
+        }
+
+        .number { 
+            color: #b5cea8; 
+        }
+
+        .function { 
+            color: #dcdcaa; 
+        }
+
+        .operator { 
+            color: #d4d4d4; 
+        }
+
+        .builtin { 
+            color: #4ec9b0; 
+        }
+
+        .variable {
+            color: #9cdcfe;
+        }
+
+        /* =========================================
+           BLOCOS DE OUTPUT
+           ========================================= */
+        .output-block {
+            background: #2d3748;
+            color: #68d391;
+            padding: 20px;
+            border-radius: 15px;
+            font-family: 'Fira Code', 'Consolas', monospace;
+            font-size: 14px;
+            line-height: 1.8;
+            margin: 15px 0;
+            border-left: 5px solid #68d391;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            white-space: pre-line;
+        }
+
+        /* =========================================
+           CAIXAS DE CONCEITO E DICAS
+           ========================================= */
+        .concept-box {
+            background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 20px 0;
+            box-shadow: 0 10px 25px rgba(116, 185, 255, 0.3);
+        }
+
+        .concept-box h4 {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .tip-box {
+            background: linear-gradient(135deg, #00b894 0%, #00a085 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            box-shadow: 0 10px 25px rgba(0, 184, 148, 0.3);
+        }
+
+        .tip-box h4 {
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .warning-box {
+            background: linear-gradient(135deg, #fd79a8 0%, #e84393 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            box-shadow: 0 10px 25px rgba(253, 121, 168, 0.3);
+        }
+
+        .warning-box h4 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* =========================================
+           GRID E CARDS
+           ========================================= */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+
+        .feature-card h4 {
+            color: #2c3e50;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .feature-card p {
+            color: #7f8c8d;
+            line-height: 1.5;
+        }
+
+        /* =========================================
+           BOTÃO DE CÓPIA
+           ========================================= */
+        .copy-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .copy-btn:hover {
+            opacity: 1;
+            transform: scale(1.05);
+        }
+
+        /* =========================================
+           RESPONSIVIDADE
+           ========================================= */
+        @media (max-width: 768px) {
+            .container { 
+                padding: 10px; 
+            }
+            
+            .header {
+                padding: 20px;
+            }
+            
+            .header h1 { 
+                font-size: 2em; 
+            }
+            
+            .nav-tabs { 
+                flex-wrap: wrap; 
+                gap: 8px;
+            }
+            
+            .tab-btn { 
+                font-size: 14px; 
+                padding: 10px 20px; 
+            }
+            
+            .code-block {
+                font-size: 12px;
+                padding: 15px;
+            }
+            
+            .grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -40,21 +391,12 @@
                         <h4>🧠 Conceito Fundamental</h4>
                         <p>O while é uma estrutura que fala: <em>"Ei Python, continue fazendo isso ENQUANTO aquela condição for verdadeira"</em></p>
                         <br>
-                        <div class="code-block">
-<span class="keyword">while</span> <span class="comment"># "enquanto"</span>
-    <span class="comment"># faça isso aqui</span>
-    <span class="comment"># e continue fazendo...</span>
-                        </div>
+                        <div class="code-block"><span class="code-line"><span class="keyword">while</span> <span class="comment"># "enquanto"</span></span><span class="code-line">    <span class="comment"># faça isso aqui</span></span><span class="code-line">    <span class="comment"># e continue fazendo...</span></span></div>
                     </div>
                     
                     <h3>🏗️ Anatomia do While</h3>
                     
-                    <div class="code-block">
-<span class="comment"># Estrutura básica</span>
-<span class="keyword">while</span> <span class="operator">condição:</span>
-    <span class="comment"># código que vai ser repetido</span>
-    <span class="comment"># IMPORTANTE: modificar a variável da condição!</span>
-                    </div>
+                    <div class="code-block"><span class="code-line"><span class="comment"># Estrutura básica</span></span><span class="code-line"><span class="keyword">while</span> <span class="operator">condição:</span></span><span class="code-line">    <span class="comment"># código que vai ser repetido</span></span><span class="code-line">    <span class="comment"># IMPORTANTE: modificar a variável da condição!</span></span></div>
                     
                     <div class="grid">
                         <div class="feature-card">
@@ -77,26 +419,214 @@
                     </div>
                 </div>
 
-                <!-- Include other teoria sections here -->
-                <div id="teoria-content"></div>
+                <div class="section">
+                    <h2>👶 Exemplo Super Básico</h2>
+                    
+                    <p>Vamos contar de 1 até 3. Simples como respirar:</p>
+                    
+                    <div class="code-block">
+<button class="copy-btn">Copiar</button><span class="code-line"><span class="comment"># Contando de 1 até 3</span></span><span class="code-line"><span class="variable">contador</span> <span class="operator">=</span> <span class="number">1</span>  <span class="comment"># Começamos com 1</span></span><span class="code-line"></span><span class="code-line"><span class="keyword">while</span> <span class="variable">contador</span> <span class="operator"><=</span> <span class="number">3</span><span class="operator">:</span>  <span class="comment"># Enquanto contador for menor ou igual a 3</span></span><span class="code-line">    <span class="builtin">print</span><span class="operator">(</span><span class="variable">contador</span><span class="operator">)</span>  <span class="comment"># Mostra o número</span></span><span class="code-line">    <span class="variable">contador</span> <span class="operator">+=</span> <span class="number">1</span>  <span class="comment"># Adiciona 1 (SUPER IMPORTANTE!)</span></span><span class="code-line"></span><span class="code-line"><span class="builtin">print</span><span class="operator">(</span><span class="string">"Acabou!"</span><span class="operator">)</span></span></div>
+                    
+                    <div class="output-block">1
+2
+3
+Acabou!</div>
+                    
+                    <div class="tip-box">
+                        <h4>💡 Por que funciona?</h4>
+                        <ol>
+                            <li><strong>contador = 1</strong> → Condição: 1 <= 3? SIM! → Executa</li>
+                            <li><strong>contador = 2</strong> → Condição: 2 <= 3? SIM! → Executa</li>
+                            <li><strong>contador = 3</strong> → Condição: 3 <= 3? SIM! → Executa</li>
+                            <li><strong>contador = 4</strong> → Condição: 4 <= 3? NÃO! → Para</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>⚠️ Cuidado com o Loop Infinito!</h2>
+                    
+                    <div class="warning-box">
+                        <h4>🚨 PERIGO: Loop Infinito</h4>
+                        <p>Se você esquecer de modificar a variável da condição, seu programa vai rodar para sempre!</p>
+                    </div>
+                    
+                    <div class="code-block">
+<button class="copy-btn">Copiar</button><span class="code-line"><span class="comment"># ❌ CÓDIGO PERIGOSO - NÃO RODE!</span></span><span class="code-line"><span class="variable">contador</span> <span class="operator">=</span> <span class="number">1</span></span><span class="code-line"></span><span class="code-line"><span class="keyword">while</span> <span class="variable">contador</span> <span class="operator"><=</span> <span class="number">3</span><span class="operator">:</span></span><span class="code-line">    <span class="builtin">print</span><span class="operator">(</span><span class="variable">contador</span><span class="operator">)</span></span><span class="code-line">    <span class="comment"># Esqueceu do contador += 1 → LOOP INFINITO!</span></span><span class="code-line">    <span class="comment"># Vai imprimir 1, 1, 1, 1... para sempre!</span></span></div>
+                    
+                    <div class="tip-box">
+                        <h4>🛡️ Como se proteger?</h4>
+                        <p>Sempre se pergunte: <em>"O que vai fazer minha condição virar False?"</em></p>
+                        <p>Se não souber a resposta, você provavelmente tem um loop infinito!</p>
+                    </div>
+                </div>
             </section>
 
             <!-- Exercícios Tab -->
             <section id="exercicios" class="tab-content">
-                <div id="exercicios-content"></div>
+                <div class="section">
+                    <h2>💪 Exercícios Progressivos</h2>
+                    <p class="intro-text">
+                        Exercícios cuidadosamente selecionados do básico ao expert!
+                    </p>
+                    
+                    <div class="code-block">
+<button class="copy-btn">Copiar</button><span class="code-line"><span class="comment"># Exercício 1: Contador simples</span></span><span class="code-line"><span class="comment"># Conte de 1 até 5</span></span><span class="code-line"></span><span class="code-line"><span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span></span><span class="code-line"><span class="keyword">while</span> <span class="variable">i</span> <span class="operator"><=</span> <span class="number">5</span><span class="operator">:</span></span><span class="code-line">    <span class="builtin">print</span><span class="operator">(</span><span class="variable">i</span><span class="operator">)</span></span><span class="code-line">    <span class="variable">i</span> <span class="operator">+=</span> <span class="number">1</span></span></div>
+                </div>
             </section>
 
             <!-- Soluções Tab -->
             <section id="solucoes" class="tab-content">
-                <div id="solucoes-content"></div>
+                <div class="section">
+                    <h2>✅ Soluções Detalhadas</h2>
+                    <p class="intro-text">
+                        Soluções explicadas passo a passo!
+                    </p>
+                    
+                    <div class="code-block">
+<button class="copy-btn">Copiar</button><span class="code-line"><span class="comment"># Solução do Exercício 1</span></span><span class="code-line"><span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span></span><span class="code-line"><span class="keyword">while</span> <span class="variable">i</span> <span class="operator"><=</span> <span class="number">5</span><span class="operator">:</span></span><span class="code-line">    <span class="builtin">print</span><span class="operator">(</span><span class="string">f"Número: </span><span class="operator">{</span><span class="variable">i</span><span class="operator">}</span><span class="string">"</span><span class="operator">)</span></span><span class="code-line">    <span class="variable">i</span> <span class="operator">+=</span> <span class="number">1</span></span></div>
+                    
+                    <div class="output-block">Número: 1
+Número: 2
+Número: 3
+Número: 4
+Número: 5</div>
+                </div>
             </section>
         </main>
     </div>
 
-    <!-- Scripts -->
-    <script src="js/navigation.js"></script>
-    <script src="js/code-copy.js"></script>
-    <script src="js/content-loader.js"></script>
-    <script src="js/main.js"></script>
+    <script>
+        // Sistema de Navegação entre Abas
+        class TabNavigation {
+            constructor() {
+                this.currentTab = 'teoria';
+                this.init();
+            }
+
+            init() {
+                this.bindEvents();
+            }
+
+            bindEvents() {
+                document.addEventListener('click', (e) => {
+                    if (e.target.classList.contains('tab-btn')) {
+                        e.preventDefault();
+                        const tabName = e.target.dataset.tab;
+                        this.showTab(tabName);
+                    }
+                });
+            }
+
+            showTab(tabName) {
+                // Esconde todas as abas
+                document.querySelectorAll('.tab-content').forEach(tab => {
+                    tab.classList.remove('active');
+                });
+                
+                // Remove classe active de todos os botões
+                document.querySelectorAll('.tab-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                
+                // Mostra a aba selecionada
+                const targetTab = document.getElementById(tabName);
+                if (targetTab) {
+                    targetTab.classList.add('active');
+                }
+                
+                // Ativa o botão correspondente
+                const targetButton = document.querySelector(`[data-tab="${tabName}"]`);
+                if (targetButton) {
+                    targetButton.classList.add('active');
+                }
+
+                this.currentTab = tabName;
+            }
+        }
+
+        // Sistema de Cópia de Código
+        class CodeCopyManager {
+            constructor() {
+                this.init();
+            }
+
+            init() {
+                this.bindEvents();
+            }
+
+            bindEvents() {
+                document.addEventListener('click', (e) => {
+                    if (e.target.classList.contains('copy-btn')) {
+                        e.preventDefault();
+                        this.copyCode(e.target);
+                    }
+                });
+            }
+
+            copyCode(button) {
+                const codeBlock = button.closest('.code-block');
+                if (!codeBlock) return;
+
+                // Extrai o texto do código
+                const codeLines = codeBlock.querySelectorAll('.code-line');
+                let code = '';
+                
+                codeLines.forEach(line => {
+                    code += line.textContent + '\n';
+                });
+
+                // Remove última quebra de linha
+                code = code.trim();
+                
+                // Copia para o clipboard
+                if (navigator.clipboard) {
+                    navigator.clipboard.writeText(code).then(() => {
+                        this.showCopySuccess(button);
+                    }).catch(() => {
+                        this.copyWithFallback(code, button);
+                    });
+                } else {
+                    this.copyWithFallback(code, button);
+                }
+            }
+
+            copyWithFallback(code, button) {
+                const textarea = document.createElement('textarea');
+                textarea.value = code;
+                textarea.style.position = 'fixed';
+                textarea.style.left = '-9999px';
+                
+                document.body.appendChild(textarea);
+                textarea.select();
+                
+                try {
+                    document.execCommand('copy');
+                    this.showCopySuccess(button);
+                } catch (error) {
+                    console.error('Erro ao copiar:', error);
+                }
+                
+                document.body.removeChild(textarea);
+            }
+
+            showCopySuccess(button) {
+                const originalText = button.textContent;
+                button.textContent = 'Copiado!';
+                button.style.background = '#27ae60';
+                
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.style.background = '#3498db';
+                }, 2000);
+            }
+        }
+
+        // Inicialização
+        document.addEventListener('DOMContentLoaded', () => {
+            new TabNavigation();
+            new CodeCopyManager();
+        });
+    </script>
 </body>
 </html>
