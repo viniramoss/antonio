@@ -1,0 +1,176 @@
+# =========================================
+# NODE.JS / NPM
+# =========================================
+
+# Dependency directories
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Package lock files (opcionais para projetos front-end)
+package-lock.json
+yarn.lock
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+*.lcov
+
+# =========================================
+# LOGS
+# =========================================
+
+# Log files
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# =========================================
+# SISTEMA OPERACIONAL
+# =========================================
+
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+
+# =========================================
+# EDITORES / IDEs
+# =========================================
+
+# Visual Studio Code
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# WebStorm / IntelliJ
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# =========================================
+# ARQUIVOS TEMPORÁRIOS / CACHE
+# =========================================
+
+# Temporary folders
+tmp/
+temp/
+.tmp/
+.cache/
+
+# Build outputs (caso adicione build no futuro)
+dist/
+build/
+*.tgz
+*.tar.gz
+
+# =========================================
+# VERCEL (caso mude para Vercel depois)
+# =========================================
+
+.vercel
+
+# =========================================
+# OUTROS SERVIÇOS
+# =========================================
+
+# Netlify
+.netlify/
+
+# Firebase
+.firebase/
+firebase-debug.log
+
+# =========================================
+# ARQUIVOS DE AMBIENTE / CONFIGURAÇÃO
+# =========================================
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Configuration files com dados sensíveis
+config.local.js
+secrets.json
+
+# =========================================
+# ANALYTICS / TRACKING
+# =========================================
+
+# Google Analytics
+gtag.js
+
+# =========================================
+# ARQUIVOS DE BACKUP
+# =========================================
+
+# Backup files
+*.bak
+*.backup
+*.old
+*.orig
+*~
+
+# =========================================
+# ESPECÍFICO DO PROJETO
+# =========================================
+
+# Arquivos de teste/desenvolvimento local
+test-data/
+playground/
+experiments/
+
+# Screenshots/assets temporários
+screenshots/
+temp-assets/
+
+# Dados de analytics local
+analytics-data.json
+user-data.json

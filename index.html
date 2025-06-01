@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia Completo - While Loops em Python</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/syntax.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <h1>🐍 Dominando While Loops em Python</h1>
+            <p>Guia completo do básico ao avançado - Explicações simples que até um primata entenderia!</p>
+            
+            <nav class="nav-tabs">
+                <button class="tab-btn active" data-tab="teoria">📚 Teoria</button>
+                <button class="tab-btn" data-tab="exercicios">💪 Exercícios</button>
+                <button class="tab-btn" data-tab="solucoes">✅ Soluções</button>
+            </nav>
+        </header>
+
+        <!-- Tab Contents -->
+        <main>
+            <!-- Teoria Tab -->
+            <section id="teoria" class="tab-content active">
+                <div class="section">
+                    <h2>🎯 O que é um Loop While?</h2>
+                    
+                    <p class="intro-text">
+                        Imagine que você precisa contar até 10, mas só tem uma calculadora que conta de 1 em 1. 
+                        Um loop while é como ter um assistente que vai repetir a ação de contar para você, 
+                        <strong>ENQUANTO</strong> uma condição for verdadeira.
+                    </p>
+                    
+                    <div class="concept-box">
+                        <h4>🧠 Conceito Fundamental</h4>
+                        <p>O while é uma estrutura que fala: <em>"Ei Python, continue fazendo isso ENQUANTO aquela condição for verdadeira"</em></p>
+                        <br>
+                        <div class="code-block">
+<span class="keyword">while</span> <span class="comment"># "enquanto"</span>
+    <span class="comment"># faça isso aqui</span>
+    <span class="comment"># e continue fazendo...</span>
+                        </div>
+                    </div>
+                    
+                    <h3>🏗️ Anatomia do While</h3>
+                    
+                    <div class="code-block">
+<span class="comment"># Estrutura básica</span>
+<span class="keyword">while</span> <span class="operator">condição:</span>
+    <span class="comment"># código que vai ser repetido</span>
+    <span class="comment"># IMPORTANTE: modificar a variável da condição!</span>
+                    </div>
+                    
+                    <div class="grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">🎯</div>
+                            <h4>Condição</h4>
+                            <p>Uma pergunta que retorna True ou False. Ex: <code>x < 10</code></p>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon">🔄</div>
+                            <h4>Repetição</h4>
+                            <p>O código dentro do while executa toda vez que a condição for True</p>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon">🛑</div>
+                            <h4>Parada</h4>
+                            <p>Quando a condição vira False, o loop para</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Include other teoria sections here -->
+                <div id="teoria-content"></div>
+            </section>
+
+            <!-- Exercícios Tab -->
+            <section id="exercicios" class="tab-content">
+                <div id="exercicios-content"></div>
+            </section>
+
+            <!-- Soluções Tab -->
+            <section id="solucoes" class="tab-content">
+                <div id="solucoes-content"></div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/navigation.js"></script>
+    <script src="js/code-copy.js"></script>
+    <script src="js/content-loader.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

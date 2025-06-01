@@ -1,0 +1,242 @@
+/* =========================================
+   CAIXAS DE CONCEITO
+   ========================================= */
+
+   .concept-box {
+    background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+    color: white;
+    padding: 25px;
+    border-radius: 15px;
+    margin: 20px 0;
+    box-shadow: 0 10px 25px rgba(116, 185, 255, 0.3);
+}
+
+.concept-box h4 {
+    font-size: 1.3em;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* =========================================
+   CAIXAS DE AVISO
+   ========================================= */
+
+.warning-box {
+    background: linear-gradient(135deg, #fd79a8 0%, #e84393 100%);
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    margin: 20px 0;
+    box-shadow: 0 10px 25px rgba(253, 121, 168, 0.3);
+}
+
+.warning-box h4 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* =========================================
+   CAIXAS DE DICA
+   ========================================= */
+
+.tip-box {
+    background: linear-gradient(135deg, #00b894 0%, #00a085 100%);
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    margin: 20px 0;
+    box-shadow: 0 10px 25px rgba(0, 184, 148, 0.3);
+}
+
+.tip-box h4 {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tip-box ul, .tip-box ol {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.tip-box li {
+    margin-bottom: 8px;
+}
+
+/* =========================================
+   CARDS DE FUNCIONALIDADE
+   ========================================= */
+
+.feature-card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+}
+
+.feature-icon {
+    font-size: 3em;
+    margin-bottom: 15px;
+}
+
+.feature-card h4 {
+    color: #2c3e50;
+    font-size: 1.3em;
+    margin-bottom: 10px;
+}
+
+.feature-card p {
+    color: #7f8c8d;
+    line-height: 1.5;
+}
+
+/* =========================================
+   CARDS DE EXERCÍCIO
+   ========================================= */
+
+.exercise-card {
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
+    margin: 25px 0;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    border-left: 6px solid #e74c3c;
+    transition: transform 0.3s ease;
+}
+
+.exercise-card:hover {
+    transform: translateY(-5px);
+}
+
+.exercise-card h3 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.exercise-card p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.exercise-card ul {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+.exercise-card li {
+    margin-bottom: 8px;
+}
+
+/* =========================================
+   BADGES DE DIFICULDADE
+   ========================================= */
+
+.difficulty-badge {
+    display: inline-block;
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.easy { 
+    background: #27ae60; 
+}
+
+.medium { 
+    background: #f39c12; 
+}
+
+.hard { 
+    background: #e74c3c; 
+}
+
+.expert { 
+    background: #8e44ad; 
+}
+
+/* =========================================
+   BLOCOS DE CÓDIGO
+   ========================================= */
+
+.code-block {
+    background: #1e1e1e;
+    color: #d4d4d4;
+    padding: 25px;
+    border-radius: 15px;
+    font-family: 'Fira Code', 'Consolas', 'Monaco', monospace;
+    font-size: 14px;
+    line-height: 1.6;
+    overflow-x: auto;
+    margin: 20px 0;
+    border-left: 5px solid #3498db;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.copy-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 12px;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.copy-btn:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+/* =========================================
+   BLOCOS DE OUTPUT
+   ========================================= */
+
+.output-block {
+    background: #2d3748;
+    color: #68d391;
+    padding: 20px;
+    border-radius: 15px;
+    font-family: 'Fira Code', 'Consolas', monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 15px 0;
+    border-left: 5px solid #68d391;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* =========================================
+   HIGHLIGHT DE INPUT
+   ========================================= */
+
+.input-highlight { 
+    color: #ffd93d; 
+    font-weight: bold; 
+    background: rgba(255, 217, 61, 0.2);
+    padding: 2px 4px;
+    border-radius: 3px;
+}

@@ -1,0 +1,232 @@
+/* =========================================
+   RESPONSIVIDADE MÓVEL
+   ========================================= */
+
+   @media (max-width: 768px) {
+    
+    /* Container principal */
+    .container { 
+        padding: 10px; 
+    }
+    
+    /* Header */
+    .header {
+        padding: 20px;
+    }
+    
+    .header h1 { 
+        font-size: 2em; 
+    }
+    
+    .header p {
+        font-size: 1em;
+    }
+    
+    /* Navegação */
+    .nav-tabs { 
+        flex-wrap: wrap; 
+        gap: 8px;
+    }
+    
+    .tab-btn { 
+        font-size: 14px; 
+        padding: 10px 20px; 
+    }
+    
+    /* Seções */
+    .section {
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .section h2 {
+        font-size: 1.5em;
+    }
+    
+    .section h3 {
+        font-size: 1.3em;
+    }
+    
+    /* Grid */
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    /* Cards */
+    .feature-card {
+        padding: 20px;
+    }
+    
+    .exercise-card {
+        padding: 20px;
+        margin: 20px 0;
+    }
+    
+    /* Feature icons */
+    .feature-icon {
+        font-size: 2.5em;
+    }
+}
+
+/* =========================================
+   TABLETS
+   ========================================= */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    
+    .container {
+        padding: 15px;
+    }
+    
+    .header h1 {
+        font-size: 2.2em;
+    }
+    
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+    
+    .section {
+        padding: 25px;
+    }
+}
+
+/* =========================================
+   DESKTOP GRANDE
+   ========================================= */
+
+@media (min-width: 1200px) {
+    
+    .container {
+        max-width: 1400px;
+    }
+    
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .header h1 {
+        font-size: 3em;
+    }
+    
+    .section h2 {
+        font-size: 2.2em;
+    }
+}
+
+/* =========================================
+   MODO ESCURO (OPCIONAL)
+   ========================================= */
+
+@media (prefers-color-scheme: dark) {
+    
+    .section {
+        background: rgba(45, 55, 72, 0.95);
+        color: #e2e8f0;
+    }
+    
+    .section h2,
+    .section h3 {
+        color: #f7fafc;
+    }
+    
+    .exercise-card {
+        background: rgba(45, 55, 72, 0.95);
+        color: #e2e8f0;
+    }
+    
+    .feature-card {
+        background: rgba(45, 55, 72, 0.95);
+        color: #e2e8f0;
+    }
+    
+    .feature-card h4 {
+        color: #f7fafc;
+    }
+    
+    .feature-card p {
+        color: #cbd5e0;
+    }
+}
+
+/* =========================================
+   PRINT STYLES
+   ========================================= */
+
+@media print {
+    
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .header {
+        background: white;
+        box-shadow: none;
+        border-bottom: 2px solid #333;
+    }
+    
+    .nav-tabs {
+        display: none;
+    }
+    
+    .tab-content {
+        display: block !important;
+    }
+    
+    .section {
+        background: white;
+        box-shadow: none;
+        border: 1px solid #ddd;
+        break-inside: avoid;
+    }
+    
+    .code-block {
+        background: #f5f5f5;
+        color: black;
+        border: 1px solid #ccc;
+    }
+    
+    .copy-btn {
+        display: none;
+    }
+    
+    .concept-box,
+    .warning-box,
+    .tip-box {
+        background: #f0f0f0;
+        color: black;
+        border: 1px solid #ccc;
+    }
+}
+
+/* =========================================
+   ACESSIBILIDADE
+   ========================================= */
+
+/* Foco para navegação por teclado */
+.tab-btn:focus,
+.copy-btn:focus {
+    outline: 3px solid #4a90e2;
+    outline-offset: 2px;
+}
+
+/* Reduzir animações para usuários sensíveis */
+@media (prefers-reduced-motion: reduce) {
+    
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .tab-btn:hover,
+    .feature-card:hover,
+    .exercise-card:hover {
+        transform: none;
+    }
+}

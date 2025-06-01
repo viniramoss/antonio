@@ -1,0 +1,110 @@
+/* =========================================
+   SYNTAX HIGHLIGHTING PARA PYTHON
+   ========================================= */
+
+/* Palavras-chave do Python */
+.keyword { 
+    color: #569cd6; 
+    font-weight: bold; 
+}
+
+/* Strings */
+.string { 
+    color: #ce9178; 
+}
+
+/* Comentários */
+.comment { 
+    color: #6a9955; 
+    font-style: italic; 
+}
+
+/* Números */
+.number { 
+    color: #b5cea8; 
+}
+
+/* Nomes de funções */
+.function { 
+    color: #dcdcaa; 
+}
+
+/* Operadores */
+.operator { 
+    color: #d4d4d4; 
+}
+
+/* Funções built-in do Python */
+.builtin { 
+    color: #4ec9b0; 
+}
+
+/* Variáveis */
+.variable {
+    color: #9cdcfe;
+}
+
+/* Decoradores */
+.decorator {
+    color: #dcdcaa;
+}
+
+/* Classes */
+.class-name {
+    color: #4ec9b0;
+}
+
+/* Métodos */
+.method {
+    color: #dcdcaa;
+}
+
+/* Tipos de dados */
+.type {
+    color: #569cd6;
+}
+
+/* Constantes */
+.constant {
+    color: #569cd6;
+    font-weight: bold;
+}
+
+/* =========================================
+   ESTILOS PARA BLOCOS DE CÓDIGO ESPECÍFICOS
+   ========================================= */
+
+/* Output de console */
+.console-output {
+    color: #a5d6a7;
+    background: #1b5e20;
+    font-family: monospace;
+}
+
+/* Erros */
+.error {
+    color: #f48fb1;
+    background: #880e4f;
+}
+
+/* Warnings */
+.warning {
+    color: #ffcc02;
+    background: #e65100;
+}
+
+/* =========================================
+   RESPONSIVIDADE PARA CÓDIGO
+   ========================================= */
+
+@media (max-width: 768px) {
+    .code-block {
+        font-size: 12px;
+        padding: 15px;
+    }
+    
+    .copy-btn {
+        font-size: 10px;
+        padding: 6px 12px;
+    }
+}

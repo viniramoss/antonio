@@ -1,0 +1,52 @@
+{
+    "name": "while-loops-python-guide",
+    "version": "1.0.0",
+    "description": "Guia interativo e completo para dominar loops while em Python",
+    "main": "index.html",
+    "scripts": {
+      "start": "npx serve . -p 3000",
+      "dev": "npx live-server --port=3000 --open=index.html",
+      "build": "echo 'Build não necessário - projeto estático'",
+      "lint": "npx eslint js/**/*.js",
+      "test": "echo 'Testes não configurados ainda'",
+      "deploy": "echo 'Configure seu método de deploy preferido'"
+    },
+    "keywords": [
+      "python",
+      "while-loop",
+      "programming",
+      "education",
+      "tutorial",
+      "interactive",
+      "guide",
+      "learning",
+      "coding",
+      "algorithms"
+    ],
+    "author": {
+      "name": "Desenvolvedor",
+      "email": "dev@example.com"
+    },
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/usuario/while-loops-python-guide"
+    },
+    "bugs": {
+      "url": "https://github.com/usuario/while-loops-python-guide/issues"
+    },
+    "homepage": "https://usuario.github.io/while-loops-python-guide",
+    "devDependencies": {
+      "eslint": "^8.0.0",
+      "live-server": "^1.2.2",
+      "serve": "^14.0.0"
+    },
+    "browserslist": [
+      "> 1%",
+      "last 2 versions",
+      "not dead"
+    ],
+    "engines": {
+      "node": ">=14.0.0"
+    }
+  }
