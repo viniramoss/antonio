@@ -79,7 +79,7 @@ class ContentLoader {
 <span class="comment"># Contando de 1 até 3</span>
 <span class="function">contador</span> <span class="operator">=</span> <span class="number">1</span>  <span class="comment"># Começamos com 1</span>
 
-<span class="keyword">while</span> <span class="function">contador</span> <span class="operator"><=</span> <span class="number">3</span><span class="operator">:</span>  <span class="comment"># Enquanto contador for menor ou igual a 3</span>
+<span class="keyword">while</span> <span class="function">contador</span> <span class="operator">&lt;=</span> <span class="number">3</span><span class="operator">:</span>  <span class="comment"># Enquanto contador for menor ou igual a 3</span>
     <span class="builtin">print</span><span class="operator">(</span><span class="function">contador</span><span class="operator">)</span>  <span class="comment"># Mostra o número</span>
     <span class="function">contador</span> <span class="operator">+=</span> <span class="number">1</span>  <span class="comment"># Adiciona 1 (SUPER IMPORTANTE!)</span>
 
@@ -94,10 +94,10 @@ Acabou!</div>
                 <div class="tip-box">
                     <h4>💡 Por que funciona?</h4>
                     <ol>
-                        <li><strong>contador = 1</strong> → Condição: 1 <= 3? SIM! → Executa</li>
-                        <li><strong>contador = 2</strong> → Condição: 2 <= 3? SIM! → Executa</li>
-                        <li><strong>contador = 3</strong> → Condição: 3 <= 3? SIM! → Executa</li>
-                        <li><strong>contador = 4</strong> → Condição: 4 <= 3? NÃO! → Para</li>
+                        <li><strong>contador = 1</strong> → Condição: 1 &lt;= 3? SIM! → Executa</li>
+                        <li><strong>contador = 2</strong> → Condição: 2 &lt;= 3? SIM! → Executa</li>
+                        <li><strong>contador = 3</strong> → Condição: 3 &lt;= 3? SIM! → Executa</li>
+                        <li><strong>contador = 4</strong> → Condição: 4 &lt;= 3? NÃO! → Para</li>
                     </ol>
                 </div>
             </div>
@@ -114,7 +114,7 @@ Acabou!</div>
 <span class="comment"># ❌ CÓDIGO PERIGOSO - NÃO RODE!</span>
 <span class="function">contador</span> <span class="operator">=</span> <span class="number">1</span>
 
-<span class="keyword">while</span> <span class="function">contador</span> <span class="operator"><=</span> <span class="number">3</span><span class="operator">:</span>
+<span class="keyword">while</span> <span class="function">contador</span> <span class="operator">&lt;=</span> <span class="number">3</span><span class="operator">:</span>
     <span class="builtin">print</span><span class="operator">(</span><span class="function">contador</span><span class="operator">)</span>
     <span class="comment"># Esqueceu do contador += 1 → LOOP INFINITO!</span>
     <span class="comment"># Vai imprimir 1, 1, 1, 1... para sempre!</span>
@@ -123,6 +123,87 @@ Acabou!</div>
                 <div class="tip-box">
                     <h4>🛡️ Como se proteger?</h4>
                     <p>Sempre se pergunte: <em>"O que vai fazer minha condição virar False?"</em></p>
+                    <p>Se não souber a resposta, você provavelmente tem um loop infinito!</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🎮 Exemplos Práticos</h2>
+                
+                <h3>🎲 Exemplo 1: Jogo de Adivinhação</h3>
+                <p>Um exemplo clássico que mostra o poder do while:</p>
+                
+                <div class="code-block">
+<span class="comment"># Jogo de adivinhação - Exemplo prático</span>
+<span class="keyword">import</span> <span class="builtin">random</span>
+
+<span class="function">numero_secreto</span> <span class="operator">=</span> <span class="builtin">random</span><span class="operator">.</span><span class="method">randint</span><span class="operator">(</span><span class="number">1</span><span class="operator">,</span> <span class="number">100</span><span class="operator">)</span>
+<span class="function">tentativas</span> <span class="operator">=</span> <span class="number">0</span>
+<span class="function">acertou</span> <span class="operator">=</span> <span class="builtin">False</span>
+
+<span class="builtin">print</span><span class="operator">(</span><span class="string">"🎯 Adivinhe o número de 1 a 100!"</span><span class="operator">)</span>
+
+<span class="keyword">while</span> <span class="keyword">not</span> <span class="function">acertou</span><span class="operator">:</span>  <span class="comment"># Enquanto não acertar</span>
+    <span class="function">palpite</span> <span class="operator">=</span> <span class="builtin">int</span><span class="operator">(</span><span class="builtin">input</span><span class="operator">(</span><span class="string">"Seu palpite: "</span><span class="operator">))</span>
+    <span class="function">tentativas</span> <span class="operator">+=</span> <span class="number">1</span>
+    
+    <span class="keyword">if</span> <span class="function">palpite</span> <span class="operator">==</span> <span class="function">numero_secreto</span><span class="operator">:</span>
+        <span class="builtin">print</span><span class="operator">(</span><span class="string">f"🎉 Acertou em {tentativas} tentativas!"</span><span class="operator">)</span>
+        <span class="function">acertou</span> <span class="operator">=</span> <span class="builtin">True</span>  <span class="comment"># Isso fará o loop parar</span>
+    <span class="keyword">elif</span> <span class="function">palpite</span> <span class="operator">&lt;</span> <span class="function">numero_secreto</span><span class="operator">:</span>
+        <span class="builtin">print</span><span class="operator">(</span><span class="string">"📈 Muito baixo!"</span><span class="operator">)</span>
+    <span class="keyword">else</span><span class="operator">:</span>
+        <span class="builtin">print</span><span class="operator">(</span><span class="string">"📉 Muito alto!"</span><span class="operator">)</span>
+                </div>
+                
+                <h3>📊 Exemplo 2: Validação de Input</h3>
+                <p>While loops são perfeitos para validar entrada do usuário:</p>
+                
+                <div class="code-block">
+<span class="comment"># Validação robusta de entrada</span>
+
+<span class="function">idade_valida</span> <span class="operator">=</span> <span class="builtin">False</span>
+
+<span class="keyword">while</span> <span class="keyword">not</span> <span class="function">idade_valida</span><span class="operator">:</span>
+    <span class="keyword">try</span><span class="operator">:</span>
+        <span class="function">idade</span> <span class="operator">=</span> <span class="builtin">int</span><span class="operator">(</span><span class="builtin">input</span><span class="operator">(</span><span class="string">"Digite sua idade (0-120): "</span><span class="operator">))</span>
+        
+        <span class="keyword">if</span> <span class="number">0</span> <span class="operator">&lt;=</span> <span class="function">idade</span> <span class="operator">&lt;=</span> <span class="number">120</span><span class="operator">:</span>
+            <span class="builtin">print</span><span class="operator">(</span><span class="string">f"✅ Idade válida: {idade} anos"</span><span class="operator">)</span>
+            <span class="function">idade_valida</span> <span class="operator">=</span> <span class="builtin">True</span>
+        <span class="keyword">else</span><span class="operator">:</span>
+            <span class="builtin">print</span><span class="operator">(</span><span class="string">"❌ Idade deve estar entre 0 e 120!"</span><span class="operator">)</span>
+            
+    <span class="keyword">except</span> <span class="builtin">ValueError</span><span class="operator">:</span>
+        <span class="builtin">print</span><span class="operator">(</span><span class="string">"❌ Por favor, digite apenas números!"</span><span class="operator">)</span>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>⚠️ Armadilhas Comuns</h2>
+                
+                <div class="warning-box">
+                    <h4>🚨 Armadilha #1: Esqueceu de Incrementar</h4>
+                    <p>O erro mais comum! Sempre verifique se a variável da condição é modificada.</p>
+                </div>
+                
+                <div class="code-block">
+<span class="comment"># ❌ ERRO COMUM - Loop infinito</span>
+<span class="function">i</span> <span class="operator">=</span> <span class="number">0</span>
+<span class="keyword">while</span> <span class="function">i</span> <span class="operator">&lt;</span> <span class="number">5</span><span class="operator">:</span>
+    <span class="builtin">print</span><span class="operator">(</span><span class="function">i</span><span class="operator">)</span>
+    <span class="comment"># Esqueceu: i += 1</span>
+
+<span class="comment"># ✅ CORREÇÃO</span>
+<span class="function">i</span> <span class="operator">=</span> <span class="number">0</span>
+<span class="keyword">while</span> <span class="function">i</span> <span class="operator">&lt;</span> <span class="number">5</span><span class="operator">:</span>
+    <span class="builtin">print</span><span class="operator">(</span><span class="function">i</span><span class="operator">)</span>
+    <span class="function">i</span> <span class="operator">+=</span> <span class="number">1</span>  <span class="comment"># ESSENCIAL!</span>
+                </div>
+                
+                <div class="tip-box">
+                    <h4>🛡️ Dica de Segurança</h4>
+                    <p><strong>Sempre se pergunte:</strong> "O que vai fazer minha condição virar False?"</p>
                     <p>Se não souber a resposta, você provavelmente tem um loop infinito!</p>
                 </div>
             </div>
@@ -137,6 +218,9 @@ Acabou!</div>
                     Exercícios cuidadosamente selecionados do básico ao expert, cobrindo desde problemas simples 
                     até desafios que você pode encontrar em competições e entrevistas técnicas!
                 </p>
+                
+                <!-- NÍVEL INICIANTE -->
+                <h3>🟢 Nível Iniciante - Fundamentos</h3>
                 
                 <div class="exercise-card">
                     <div class="difficulty-badge easy">FÁCIL</div>
@@ -153,17 +237,22 @@ Total: 10 maçãs coletadas!</div>
                 </div>
                 
                 <div class="exercise-card">
-                    <div class="difficulty-badge medium">MÉDIO</div>
-                    <h3>💰 Exercício 2: Simulador de Poupança</h3>
-                    <p><strong>Contexto:</strong> Você quer saber quando sua poupança vai atingir uma meta.</p>
-                    <p><strong>Problema:</strong> Comece com R$ 1000,00. A cada mês, adicione R$ 150,00 e ganhe 0,5% de juros sobre o total. Calcule em quantos meses você terá pelo menos R$ 2000,00.</p>
-                    <p><strong>Detalhes:</strong></p>
+                    <div class="difficulty-badge easy">FÁCIL</div>
+                    <h3>🔢 Exercício 2: Soma dos Primeiros N Números</h3>
+                    <p><strong>Inspirado em:</strong> LeetCode básico</p>
+                    <p><strong>Problema:</strong> Dado um número N, calcule a soma de todos os números de 1 até N usando while loop.</p>
+                    <p><strong>Exemplo:</strong></p>
                     <ul>
-                        <li>Saldo inicial: R$ 1000,00</li>
-                        <li>Depósito mensal: R$ 150,00</li>
-                        <li>Juros mensais: 0,5% sobre o saldo total</li>
-                        <li>Meta: R$ 2000,00</li>
+                        <li>Input: N = 5</li>
+                        <li>Output: 15 (porque 1+2+3+4+5 = 15)</li>
                     </ul>
+                </div>
+                
+                <div class="exercise-card">
+                    <div class="difficulty-badge medium">MÉDIO</div>
+                    <h3>💰 Exercício 3: Simulador de Poupança</h3>
+                    <p><strong>Contexto:</strong> Você quer saber quando sua poupança vai atingir uma meta.</p>
+                    <p><strong>Problema:</strong> Comece com R$ 1000,00. A cada mês, adicione R$ 150,00 e ganhe 0,5% de juros sobre o total.</p>
                 </div>
             </div>
         `;
@@ -185,7 +274,7 @@ Total: 10 maçãs coletadas!</div>
 
 <span class="function">contador</span> <span class="operator">=</span> <span class="number">1</span>  <span class="comment"># Inicializa o contador</span>
 
-<span class="keyword">while</span> <span class="function">contador</span> <span class="operator"><=</span> <span class="number">10</span><span class="operator">:</span>  <span class="comment"># Enquanto contador for menor ou igual a 10</span>
+<span class="keyword">while</span> <span class="function">contador</span> <span class="operator">&lt;=</span> <span class="number">10</span><span class="operator">:</span>  <span class="comment"># Enquanto contador for menor ou igual a 10</span>
     <span class="builtin">print</span><span class="operator">(</span><span class="string">f"Maçã número {contador}"</span><span class="operator">)</span>  <span class="comment"># Mostra a maçã atual</span>
     <span class="function">contador</span> <span class="operator">+=</span> <span class="number">1</span>  <span class="comment"># Incrementa o contador</span>
 
@@ -196,7 +285,7 @@ Total: 10 maçãs coletadas!</div>
                         <h4>📋 Pontos importantes:</h4>
                         <ol>
                             <li><strong>Inicialização:</strong> Começamos com contador = 1</li>
-                            <li><strong>Condição:</strong> while contador <= 10 (vai de 1 até 10)</li>
+                            <li><strong>Condição:</strong> while contador &lt;= 10 (vai de 1 até 10)</li>
                             <li><strong>Incremento:</strong> contador += 1 evita loop infinito</li>
                             <li><strong>Total:</strong> contador-1 porque após o último loop, contador vira 11</li>
                         </ol>
