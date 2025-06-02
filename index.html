@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guia Completo - While Loops em Python</title>
+    <title>Guia Completo - While Loops e For in Range em Python</title>
     <style>
         /* =========================================
            RESET E CONFIGURAÇÕES BÁSICAS
@@ -408,8 +408,8 @@
     <div class="container">
         <!-- Header Section -->
         <header class="header">
-            <h1>🐍 Dominando While Loops em Python</h1>
-            <p>Guia completo do básico ao avançado - Explicações simples que até um primata entenderia!</p>
+            <h1>🐍 Dominando Loops em Python</h1>
+            <p>While Loops e For in Range - Do básico ao avançado com explicações que até um primata entenderia!</p>
             
             <nav class="nav-tabs">
                 <button class="tab-btn active" data-tab="teoria">📚 Teoria</button>
@@ -464,7 +464,45 @@
                 </div>
 
                 <div class="section">
-                    <h2>👶 Exemplo Super Básico</h2>
+                    <h2>🔄 While vs For: Quando Usar Cada Um?</h2>
+                    
+                    <p class="intro-text">
+                        Imagine que você quer fazer 100 flexões. Existem duas maneiras de contar:
+                    </p>
+                    
+                    <div class="grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">⏰</div>
+                            <h4>While Loop</h4>
+                            <p><strong>Use quando:</strong> Não sabe EXATAMENTE quantas vezes vai repetir</p>
+                            <p><em>"Continue até eu me cansar"</em></p>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon">🔢</div>
+                            <h4>For Loop</h4>
+                            <p><strong>Use quando:</strong> Sabe EXATAMENTE quantas vezes quer repetir</p>
+                            <p><em>"Quero fazer exatamente 100 flexões"</em></p>
+                        </div>
+                    </div>
+                    
+                    <h3>📊 Comparação Prática</h3>
+                    
+                    <div class="code-block">
+<button class="copy-btn">Copiar</button><span class="code-line"><span class="comment"># WHILE - Usado quando a condição pode mudar dinamicamente</span></span>
+<span class="code-line"><span class="variable">energia</span> <span class="operator">=</span> <span class="number">100</span></span>
+<span class="code-line"><span class="keyword">while</span> <span class="variable">energia</span> <span class="operator">></span> <span class="number">0</span><span class="operator">:</span>  <span class="comment"># Não sabemos quando vai parar</span></span>
+<span class="code-line">    <span class="builtin">print</span><span class="operator">(</span><span class="string">"Fazendo flexão..."</span><span class="operator">)</span></span>
+<span class="code-line">    <span class="variable">energia</span> <span class="operator">-=</span> <span class="number">10</span>  <span class="comment"># Energia diminui aleatoriamente</span></span>
+<span class="code-line"></span>
+<span class="code-line"><span class="comment"># FOR - Usado quando sabemos o número exato</span></span>
+<span class="code-line"><span class="keyword">for</span> <span class="variable">i</span> <span class="keyword">in</span> <span class="builtin">range</span><span class="operator">(</span><span class="number">100</span><span class="operator">)</span><span class="operator">:</span>  <span class="comment"># Exatamente 100 vezes</span></span>
+<span class="code-line">    <span class="builtin">print</span><span class="operator">(</span><span class="string">f"Flexão número </span><span class="operator">{</span><span class="variable">i</span><span class="operator">+</span><span class="number">1</span><span class="operator">}</span><span class="string">"</span><span class="operator">)</span></span>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>👶 Exemplo Super Básico - While</h2>
                     
                     <p>Vamos contar de 1 até 3. Simples como respirar:</p>
                     
@@ -488,6 +526,123 @@ Acabou!</div>
                 </div>
 
                 <div class="section">
+                    <h2>🚀 Introdução ao FOR IN RANGE</h2>
+                    
+                    <p class="intro-text">
+                        O <strong>for in range()</strong> é como ter um contador automático! É perfeito quando você sabe exatamente quantas vezes quer repetir algo.
+                    </p>
+                    
+                    <div class="concept-box">
+                        <h4>🎯 O que é o range()?</h4>
+                        <p>O <strong>range()</strong> é uma função que cria uma sequência de números. É como uma máquina de números!</p>
+                        <ul>
+                            <li><strong>range(5)</strong> → 0, 1, 2, 3, 4 (5 números, começando do 0)</li>
+                            <li><strong>range(1, 6)</strong> → 1, 2, 3, 4, 5 (do 1 até 5)</li>
+                            <li><strong>range(2, 10, 2)</strong> → 2, 4, 6, 8 (de 2 em 2)</li>
+                        </ul>
+                    </div>
+                    
+                    <h3>🔍 Anatomia do For In Range</h3>
+                    
+                    <div class="code-block">
+<button class="copy-btn">Copiar</button><span class="code-line"><span class="comment"># Estrutura básica</span></span>
+<span class="code-line"><span class="keyword">for</span> <span class="variable">variavel</span> <span class="keyword">in</span> <span class="builtin">range</span><span class="operator">(</span><span class="variable">numero</span><span class="operator">)</span><span class="operator">:</span></span>
+<span class="code-line">    <span class="comment"># código que vai ser repetido</span></span>
+<span class="code-line">    <span class="comment"># A variável muda automaticamente!</span></span>
+                    </div>
+                    
+                    <h3>🏃‍♂️ Exemplo Prático</h3>
+                    
+                    <div class="code-block">
+<button class="copy-btn">Copiar</button><span class="code-line"><span class="comment"># Contando de 0 até 4 (5 números)</span></span>
+<span class="code-line"><span class="keyword">for</span> <span class="variable">i</span> <span class="keyword">in</span> <span class="builtin">range</span><span class="operator">(</span><span class="number">5</span><span class="operator">)</span><span class="operator">:</span></span>
+<span class="code-line">    <span class="builtin">print</span><span class="operator">(</span><span class="string">f"Número: </span><span class="operator">{</span><span class="variable">i</span><span class="operator">}</span><span class="string">"</span><span class="operator">)</span></span>
+                    </div>
+                    
+                    <div class="output-block">Número: 0
+Número: 1
+Número: 2
+Número: 3
+Número: 4</div>
+                    
+                    <div class="warning-box">
+                        <h4>⚠️ Atenção: range(5) vai de 0 até 4!</h4>
+                        <p>O Python sempre <strong>exclui</strong> o último número. É como uma fila: se você quer 5 pessoas, numera de 0 até 4!</p>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>🎛️ Variações do Range()</h2>
+                    
+                    <h3>1️⃣ range(stop) - Só o Final</h3>
+                    <div class="code-block">
+<button class="copy-btn">Copiar</button><span class="code-line"><span class="comment"># De 0 até n-1</span></span>
+<span class="code-line"><span class="keyword">for</span> <span class="variable">i</span> <span class="keyword">in</span> <span class="builtin">range</span><span class="operator">(</span><span class="number">3</span><span class="operator">)</span><span class="operator">:</span></span>
+<span class="code-line">    <span class="builtin">print</span><span class="operator">(</span><span class="variable">i</span><span class="operator">)</span>  <span class="comment"># Imprime: 0, 1, 2</span></span>
+                    </div>
+                    
+                    <h3>2️⃣ range(start, stop) - Início e Final</h3>
+                    <div class="code-block">
+<button class="copy-btn">Copiar</button><span class="code-line"><span class="comment"># De start até stop-1</span></span>
+<span class="code-line"><span class="keyword">for</span> <span class="variable">i</span> <span class="keyword">in</span> <span class="builtin">range</span><span class="operator">(</span><span class="number">1</span><span class="operator">,</span> <span class="number">5</span><span class="operator">)</span><span class="operator">:</span></span>
+<span class="code-line">    <span class="builtin">print</span><span class="operator">(</span><span class="variable">i</span><span class="operator">)</span>  <span class="comment"># Imprime: 1, 2, 3, 4</span></span>
+                    </div>
+                    
+                    <h3>3️⃣ range(start, stop, step) - Com Passo</h3>
+                    <div class="code-block">
+<button class="copy-btn">Copiar</button><span class="code-line"><span class="comment"># De start até stop-1, pulando de step em step</span></span>
+<span class="code-line"><span class="keyword">for</span> <span class="variable">i</span> <span class="keyword">in</span> <span class="builtin">range</span><span class="operator">(</span><span class="number">0</span><span class="operator">,</span> <span class="number">10</span><span class="operator">,</span> <span class="number">2</span><span class="operator">)</span><span class="operator">:</span></span>
+<span class="code-line">    <span class="builtin">print</span><span class="operator">(</span><span class="variable">i</span><span class="operator">)</span>  <span class="comment"># Imprime: 0, 2, 4, 6, 8</span></span>
+                    </div>
+                    
+                    <h3>4️⃣ Range Decrescente</h3>
+                    <div class="code-block">
+<button class="copy-btn">Copiar</button><span class="code-line"><span class="comment"># Contagem regressiva!</span></span>
+<span class="code-line"><span class="keyword">for</span> <span class="variable">i</span> <span class="keyword">in</span> <span class="builtin">range</span><span class="operator">(</span><span class="number">5</span><span class="operator">,</span> <span class="number">0</span><span class="operator">,</span> <span class="operator">-</span><span class="number">1</span><span class="operator">)</span><span class="operator">:</span></span>
+<span class="code-line">    <span class="builtin">print</span><span class="operator">(</span><span class="variable">i</span><span class="operator">)</span>  <span class="comment"># Imprime: 5, 4, 3, 2, 1</span></span>
+<span class="code-line"><span class="builtin">print</span><span class="operator">(</span><span class="string">"🚀 Decolagem!"</span><span class="operator">)</span></span>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>🥊 While vs For: Round Final!</h2>
+                    
+                    <p class="intro-text">Vamos fazer a mesma tarefa com os dois métodos para você ver a diferença:</p>
+                    
+                    <h3>🎯 Missão: Imprimir números de 1 até 5</h3>
+                    
+                    <div class="grid">
+                        <div class="feature-card">
+                            <h4>🔄 Método While</h4>
+                            <div class="code-block">
+<span class="code-line"><span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span></span>
+<span class="code-line"><span class="keyword">while</span> <span class="variable">i</span> <span class="operator"><=</span> <span class="number">5</span><span class="operator">:</span></span>
+<span class="code-line">    <span class="builtin">print</span><span class="operator">(</span><span class="variable">i</span><span class="operator">)</span></span>
+<span class="code-line">    <span class="variable">i</span> <span class="operator">+=</span> <span class="number">1</span></span>
+                            </div>
+                            <p><strong>Linhas:</strong> 4 | <strong>Controle:</strong> Manual</p>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <h4>🚀 Método For</h4>
+                            <div class="code-block">
+<span class="code-line"><span class="keyword">for</span> <span class="variable">i</span> <span class="keyword">in</span> <span class="builtin">range</span><span class="operator">(</span><span class="number">1</span><span class="operator">,</span> <span class="number">6</span><span class="operator">)</span><span class="operator">:</span></span>
+<span class="code-line">    <span class="builtin">print</span><span class="operator">(</span><span class="variable">i</span><span class="operator">)</span></span>
+                            </div>
+                            <p><strong>Linhas:</strong> 2 | <strong>Controle:</strong> Automático</p>
+                        </div>
+                    </div>
+                    
+                    <div class="tip-box">
+                        <h4>🏆 Veredito:</h4>
+                        <ul>
+                            <li><strong>For:</strong> Mais limpo, menos código, sem risco de loop infinito</li>
+                            <li><strong>While:</strong> Mais flexível, pode parar com condições complexas</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="section">
                     <h2>⚠️ Cuidado com o Loop Infinito!</h2>
                     
                     <div class="warning-box">
@@ -502,6 +657,7 @@ Acabou!</div>
                         <h4>🛡️ Como se proteger?</h4>
                         <p>Sempre se pergunte: <em>"O que vai fazer minha condição virar False?"</em></p>
                         <p>Se não souber a resposta, você provavelmente tem um loop infinito!</p>
+                        <p><strong>Dica:</strong> Use <strong>for</strong> quando souber quantas repetições precisa!</p>
                     </div>
                 </div>
             </section>
@@ -632,6 +788,64 @@ LARGADA!</div>
                         <p><strong>Contexto:</strong> Sistema de autenticação com limite de tentativas.</p>
                         <p><strong>Problema:</strong> Crie um sistema onde o usuário tem 3 tentativas para acertar uma senha. Após 3 erros, bloquear por 30 segundos.</p>
                     </div>
+                    
+                    <!-- EXERCÍCIOS FOR IN RANGE -->
+                    <h3>🚀 Nível FOR IN RANGE - Novos Horizontes</h3>
+                    
+                    <div class="exercise-card">
+                        <div class="difficulty-badge easy">FÁCIL</div>
+                        <h3>🎵 Exercício 11: Playlist de Músicas</h3>
+                        <p><strong>Contexto:</strong> Você está organizando uma playlist e quer numerar as músicas.</p>
+                        <p><strong>Problema:</strong> Use <code>for in range()</code> para criar uma playlist de 8 músicas, mostrando "Música 1", "Música 2", etc.</p>
+                        <p><strong>Exemplo de saída:</strong></p>
+                        <div class="output-block">🎵 Música 1
+🎵 Música 2
+🎵 Música 3
+...
+🎵 Música 8
+🎧 Total: 8 músicas na playlist!</div>
+                    </div>
+                    
+                    <div class="exercise-card">
+                        <div class="difficulty-badge easy">FÁCIL</div>
+                        <h3>🔢 Exercício 12: Tabuada Moderna</h3>
+                        <p><strong>Contexto:</strong> Ensinar tabuada para crianças de forma moderna.</p>
+                        <p><strong>Problema:</strong> Use <code>for in range()</code> para criar a tabuada do 7, de 7×1 até 7×12.</p>
+                        <p><strong>Exemplo de saída:</strong></p>
+                        <div class="output-block">7 × 1 = 7
+7 × 2 = 14
+7 × 3 = 21
+...
+7 × 12 = 84</div>
+                    </div>
+                    
+                    <div class="exercise-card">
+                        <div class="difficulty-badge medium">MÉDIO</div>
+                        <h3>🎪 Exercício 13: Pirâmide de Números</h3>
+                        <p><strong>Contexto:</strong> Criar uma pirâmide visual com números.</p>
+                        <p><strong>Problema:</strong> Use <code>for in range()</code> para criar uma pirâmide onde cada linha mostra números crescentes.</p>
+                        <p><strong>Exemplo de saída:</strong></p>
+                        <div class="output-block">1
+1 2
+1 2 3
+1 2 3 4
+1 2 3 4 5</div>
+                    </div>
+                    
+                    <div class="exercise-card">
+                        <div class="difficulty-badge medium">MÉDIO</div>
+                        <h3>🎯 Exercício 14: Contador de Pontos</h3>
+                        <p><strong>Contexto:</strong> Sistema de pontuação de um jogo onde você ganha pontos específicos.</p>
+                        <p><strong>Problema:</strong> Use <code>for in range(10, 101, 10)</code> para mostrar pontuações de 10 em 10, até 100 pontos.</p>
+                        <p><strong>Desafio extra:</strong> Calcule e mostre o total de pontos acumulados.</p>
+                        <p><strong>Exemplo de saída:</strong></p>
+                        <div class="output-block">🎯 Nível 1: 10 pontos
+🎯 Nível 2: 20 pontos
+🎯 Nível 3: 30 pontos
+...
+🎯 Nível 10: 100 pontos
+🏆 Total acumulado: 550 pontos!</div>
+                    </div>
                 </div>
             </section>
 
@@ -732,7 +946,7 @@ LARGADA!</div>
                         </div>
                         
                         <div class="concept-box">
-                            <h4>🧮 Conceitos Financeiros</h4>
+                            <h4>🧠 Conceitos Financeiros</h4>
                             <p><strong>Juros compostos:</strong> saldo *= 1.005 (multiplica por 1 + taxa)</p>
                             <p><strong>Formatação:</strong> {valor:.2f} mostra 2 casas decimais</p>
                             <p><strong>Alinhamento:</strong> {mes:2d} alinha números à direita</p>
@@ -753,6 +967,81 @@ LARGADA!</div>
                                 <li><strong>Operador módulo (%):</strong> soma % 2 == 0 verifica se é par</li>
                                 <li><strong>Operador ternário:</strong> valor = A if condição else B</li>
                                 <li><strong>Métodos de string:</strong> .upper(), .lower(), .strip()</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- SOLUÇÕES FOR IN RANGE -->
+                    <h3>🚀 Soluções FOR IN RANGE</h3>
+                    
+                    <div class="exercise-card">
+                        <h3>🎵 Solução 11: Playlist de Músicas</h3>
+                        
+                        <div class="code-block">
+<button class="copy-btn">Copiar</button><span class="code-line"><span class="comment"># Playlist de Músicas - Solução</span></span><span class="code-line"></span><span class="code-line"><span class="comment"># Criando playlist com 8 músicas</span></span><span class="code-line"><span class="keyword">for</span> <span class="variable">i</span> <span class="keyword">in</span> <span class="builtin">range</span><span class="operator">(</span><span class="number">1</span><span class="operator">,</span> <span class="number">9</span><span class="operator">)</span><span class="operator">:</span>  <span class="comment"># De 1 até 8</span></span><span class="code-line">    <span class="builtin">print</span><span class="operator">(</span><span class="string">f"🎵 Música </span><span class="operator">{</span><span class="variable">i</span><span class="operator">}</span><span class="string">"</span><span class="operator">)</span></span><span class="code-line"></span><span class="code-line"><span class="builtin">print</span><span class="operator">(</span><span class="string">"🎧 Total: 8 músicas na playlist!"</span><span class="operator">)</span></span>
+                        </div>
+                        
+                        <div class="tip-box">
+                            <h4>🎯 Por que range(1, 9)?</h4>
+                            <ul>
+                                <li><strong>Queremos:</strong> Números de 1 até 8</li>
+                                <li><strong>range(1, 9):</strong> Começa em 1, para ANTES de 9</li>
+                                <li><strong>Resultado:</strong> 1, 2, 3, 4, 5, 6, 7, 8 ✅</li>
+                                <li><strong>Lembre-se:</strong> O último número é sempre EXCLUÍDO!</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="exercise-card">
+                        <h3>🔢 Solução 12: Tabuada Moderna</h3>
+                        
+                        <div class="code-block">
+<button class="copy-btn">Copiar</button><span class="code-line"><span class="comment"># Tabuada do 7 - Solução</span></span><span class="code-line"></span><span class="code-line"><span class="variable">numero</span> <span class="operator">=</span> <span class="number">7</span>  <span class="comment"># Número da tabuada</span></span><span class="code-line"></span><span class="code-line"><span class="builtin">print</span><span class="operator">(</span><span class="string">f"📚 Tabuada do </span><span class="operator">{</span><span class="variable">numero</span><span class="operator">}</span><span class="string">:"</span><span class="operator">)</span></span><span class="code-line"><span class="builtin">print</span><span class="operator">(</span><span class="string">"-" * 20</span><span class="operator">)</span></span><span class="code-line"></span><span class="code-line"><span class="keyword">for</span> <span class="variable">i</span> <span class="keyword">in</span> <span class="builtin">range</span><span class="operator">(</span><span class="number">1</span><span class="operator">,</span> <span class="number">13</span><span class="operator">)</span><span class="operator">:</span>  <span class="comment"># De 1 até 12</span></span><span class="code-line">    <span class="variable">resultado</span> <span class="operator">=</span> <span class="variable">numero</span> <span class="operator">*</span> <span class="variable">i</span></span><span class="code-line">    <span class="builtin">print</span><span class="operator">(</span><span class="string">f"</span><span class="operator">{</span><span class="variable">numero</span><span class="operator">}</span><span class="string"> × </span><span class="operator">{</span><span class="variable">i</span><span class="operator">:</span><span class="number">2</span><span class="variable">d</span><span class="operator">}</span><span class="string"> = </span><span class="operator">{</span><span class="variable">resultado</span><span class="operator">:</span><span class="number">3</span><span class="variable">d</span><span class="operator">}</span><span class="string">"</span><span class="operator">)</span></span>
+                        </div>
+                        
+                        <div class="concept-box">
+                            <h4>🎨 Formatação Profissional</h4>
+                            <p><strong>{i:2d}</strong> = Alinha número à direita em 2 espaços</p>
+                            <p><strong>{resultado:3d}</strong> = Alinha resultado em 3 espaços</p>
+                            <p><strong>"-" * 20</strong> = Cria uma linha de 20 traços</p>
+                            <p>Isso deixa a saída organizada e bonita! 📐</p>
+                        </div>
+                    </div>
+
+                    <div class="exercise-card">
+                        <h3>🎪 Solução 13: Pirâmide de Números</h3>
+                        
+                        <div class="code-block">
+<button class="copy-btn">Copiar</button><span class="code-line"><span class="comment"># Pirâmide de Números - Solução</span></span><span class="code-line"></span><span class="code-line"><span class="variable">altura</span> <span class="operator">=</span> <span class="number">5</span>  <span class="comment"># Altura da pirâmide</span></span><span class="code-line"></span><span class="code-line"><span class="builtin">print</span><span class="operator">(</span><span class="string">"🎪 Pirâmide de Números:"</span><span class="operator">)</span></span><span class="code-line"></span><span class="code-line"><span class="comment"># Para cada linha da pirâmide</span></span><span class="code-line"><span class="keyword">for</span> <span class="variable">linha</span> <span class="keyword">in</span> <span class="builtin">range</span><span class="operator">(</span><span class="number">1</span><span class="operator">,</span> <span class="variable">altura</span> <span class="operator">+</span> <span class="number">1</span><span class="operator">)</span><span class="operator">:</span>  <span class="comment"># De 1 até altura</span></span><span class="code-line">    <span class="variable">numeros_da_linha</span> <span class="operator">=</span> <span class="operator">[]</span>  <span class="comment"># Lista para guardar os números</span></span><span class="code-line">    </span><span class="code-line">    <span class="comment"># Para cada número na linha</span></span><span class="code-line">    <span class="keyword">for</span> <span class="variable">numero</span> <span class="keyword">in</span> <span class="builtin">range</span><span class="operator">(</span><span class="number">1</span><span class="operator">,</span> <span class="variable">linha</span> <span class="operator">+</span> <span class="number">1</span><span class="operator">)</span><span class="operator">:</span></span><span class="code-line">        <span class="variable">numeros_da_linha</span><span class="operator">.</span><span class="builtin">append</span><span class="operator">(</span><span class="builtin">str</span><span class="operator">(</span><span class="variable">numero</span><span class="operator">))</span></span><span class="code-line">    </span><span class="code-line">    <span class="comment"># Junta os números com espaço e imprime</span></span><span class="code-line">    <span class="builtin">print</span><span class="operator">(</span><span class="string">" "</span><span class="operator">.</span><span class="builtin">join</span><span class="operator">(</span><span class="variable">numeros_da_linha</span><span class="operator">))</span></span><span class="code-line"></span><span class="code-line"><span class="builtin">print</span><span class="operator">(</span><span class="string">"🎉 Pirâmide completa!"</span><span class="operator">)</span></span>
+                        </div>
+                        
+                        <div class="warning-box">
+                            <h4>🧠 For dentro de For!</h4>
+                            <p>Este exercício usa <strong>loops aninhados</strong> (um for dentro de outro):</p>
+                            <ul>
+                                <li><strong>For externo:</strong> Controla as linhas (1, 2, 3, 4, 5)</li>
+                                <li><strong>For interno:</strong> Controla os números de cada linha</li>
+                                <li><strong>Linha 1:</strong> números de 1 até 1 → "1"</li>
+                                <li><strong>Linha 2:</strong> números de 1 até 2 → "1 2"</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="exercise-card">
+                        <h3>🎯 Solução 14: Contador de Pontos</h3>
+                        
+                        <div class="code-block">
+<button class="copy-btn">Copiar</button><span class="code-line"><span class="comment"># Contador de Pontos - Solução</span></span><span class="code-line"></span><span class="code-line"><span class="variable">total_pontos</span> <span class="operator">=</span> <span class="number">0</span>  <span class="comment"># Acumulador de pontos</span></span><span class="code-line"><span class="variable">nivel</span> <span class="operator">=</span> <span class="number">1</span>  <span class="comment"># Contador de nível</span></span><span class="code-line"></span><span class="code-line"><span class="builtin">print</span><span class="operator">(</span><span class="string">"🎮 Sistema de Pontuação:"</span><span class="operator">)</span></span><span class="code-line"><span class="builtin">print</span><span class="operator">(</span><span class="string">"=" * 30</span><span class="operator">)</span></span><span class="code-line"></span><span class="code-line"><span class="comment"># De 10 em 10, até 100</span></span><span class="code-line"><span class="keyword">for</span> <span class="variable">pontos</span> <span class="keyword">in</span> <span class="builtin">range</span><span class="operator">(</span><span class="number">10</span><span class="operator">,</span> <span class="number">101</span><span class="operator">,</span> <span class="number">10</span><span class="operator">)</span><span class="operator">:</span></span><span class="code-line">    <span class="builtin">print</span><span class="operator">(</span><span class="string">f"🎯 Nível </span><span class="operator">{</span><span class="variable">nivel</span><span class="operator">:</span><span class="number">2</span><span class="variable">d</span><span class="operator">}</span><span class="string">: </span><span class="operator">{</span><span class="variable">pontos</span><span class="operator">:</span><span class="number">3</span><span class="variable">d</span><span class="operator">}</span><span class="string"> pontos"</span><span class="operator">)</span></span><span class="code-line">    <span class="variable">total_pontos</span> <span class="operator">+=</span> <span class="variable">pontos</span>  <span class="comment"># Acumula os pontos</span></span><span class="code-line">    <span class="variable">nivel</span> <span class="operator">+=</span> <span class="number">1</span>  <span class="comment"># Próximo nível</span></span><span class="code-line"></span><span class="code-line"><span class="builtin">print</span><span class="operator">(</span><span class="string">"=" * 30</span><span class="operator">)</span></span><span class="code-line"><span class="builtin">print</span><span class="operator">(</span><span class="string">f"🏆 Total acumulado: </span><span class="operator">{</span><span class="variable">total_pontos</span><span class="operator">}</span><span class="string"> pontos!"</span><span class="operator">)</span></span><span class="code-line"></span><span class="code-line"><span class="comment"># Bônus: Calculando de forma matemática</span></span><span class="code-line"><span class="variable">total_matematico</span> <span class="operator">=</span> <span class="builtin">sum</span><span class="operator">(</span><span class="builtin">range</span><span class="operator">(</span><span class="number">10</span><span class="operator">,</span> <span class="number">101</span><span class="operator">,</span> <span class="number">10</span><span class="operator">))</span></span><span class="code-line"><span class="builtin">print</span><span class="operator">(</span><span class="string">f"🧮 Verificação matemática: </span><span class="operator">{</span><span class="variable">total_matematico</span><span class="operator">}</span><span class="string"> pontos"</span><span class="operator">)</span></span>
+                        </div>
+                        
+                        <div class="concept-box">
+                            <h4>🚀 Conceitos Avançados</h4>
+                            <ul>
+                                <li><strong>range(10, 101, 10):</strong> De 10 até 100, pulando de 10 em 10</li>
+                                <li><strong>Acumulador:</strong> total_pontos += pontos</li>
+                                <li><strong>Formatação:</strong> {nivel:2d} alinha em 2 dígitos</li>
+                                <li><strong>sum(range()):</strong> Soma automática de uma sequência</li>
+                                <li><strong>Verificação:</strong> Sempre bom conferir o resultado!</li>
                             </ul>
                         </div>
                     </div>
